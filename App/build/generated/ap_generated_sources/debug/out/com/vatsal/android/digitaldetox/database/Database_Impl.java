@@ -28,9 +28,9 @@ public class Database_Impl extends Database {
     final SupportSQLiteOpenHelper.Callback _openCallback = new RoomOpenHelper(configuration, new RoomOpenHelper.Delegate(1) {
       @Override
       public void createAllTables(SupportSQLiteDatabase _db) {
-        _db.execSQL("CREATE TABLE IF NOT EXISTS `events` (`appName` TEXT NOT NULL, `startTime` INTEGER NOT NULL, `endTime` INTEGER NOT NULL, `ongoing` INTEGER NOT NULL, `packageName` TEXT, PRIMARY KEY(`startTime`, `appName`))");
+        _db.execSQL("CREATE TABLE IF NOT EXISTS `events` (`appName` TEXT NOT NULL, `date` TEXT, `startTime` INTEGER NOT NULL, `endTime` INTEGER NOT NULL, `ongoing` INTEGER NOT NULL, `packageName` TEXT, PRIMARY KEY(`startTime`, `appName`))");
         _db.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)");
-        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"5b9470783c84247f3cde7f8c1c5fb0ac\")");
+        _db.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, \"67ee419ef1aad129f674ea276c127bcb\")");
       }
 
       @Override
@@ -60,8 +60,9 @@ public class Database_Impl extends Database {
 
       @Override
       protected void validateMigration(SupportSQLiteDatabase _db) {
-        final HashMap<String, TableInfo.Column> _columnsEvents = new HashMap<String, TableInfo.Column>(5);
+        final HashMap<String, TableInfo.Column> _columnsEvents = new HashMap<String, TableInfo.Column>(6);
         _columnsEvents.put("appName", new TableInfo.Column("appName", "TEXT", true, 2));
+        _columnsEvents.put("date", new TableInfo.Column("date", "TEXT", false, 0));
         _columnsEvents.put("startTime", new TableInfo.Column("startTime", "INTEGER", true, 1));
         _columnsEvents.put("endTime", new TableInfo.Column("endTime", "INTEGER", true, 0));
         _columnsEvents.put("ongoing", new TableInfo.Column("ongoing", "INTEGER", true, 0));
@@ -76,7 +77,7 @@ public class Database_Impl extends Database {
                   + " Found:\n" + _existingEvents);
         }
       }
-    }, "5b9470783c84247f3cde7f8c1c5fb0ac", "69ee320e2cc84a672de624f10f7a0ddc");
+    }, "67ee419ef1aad129f674ea276c127bcb", "ade0bfac160f3a89699c60ccff7b30ef");
     final SupportSQLiteOpenHelper.Configuration _sqliteConfig = SupportSQLiteOpenHelper.Configuration.builder(configuration.context)
         .name(configuration.name)
         .callback(_openCallback)

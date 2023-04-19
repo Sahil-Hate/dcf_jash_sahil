@@ -14,6 +14,8 @@ public class DataBaseHelper extends SQLiteOpenHelper{
     private static final String tableName = "minutestable";
     private static final String column_1 = "package";
     private static final String column_2 = "minutes";
+    private static final String column_3 = "date";
+
 
     /**
      * class constructor
@@ -25,7 +27,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL(" CREATE TABLE  "+tableName+" ("+column_1+" text primary key, "+column_2+" long ); ");
+        db.execSQL(" CREATE TABLE  "+tableName+" ("+column_1+" text primary key, "+column_2+" long, "+column_3+" text ); ");
     }
 
     @Override

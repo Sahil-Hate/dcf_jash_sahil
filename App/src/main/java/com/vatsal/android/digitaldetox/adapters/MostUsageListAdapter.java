@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,7 +26,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-
+import com.vatsal.android.digitaldetox.utils.AppList;
 
 public class MostUsageListAdapter extends RecyclerView.Adapter<MostUsageListAdapter.ViewHolder> {
 
@@ -41,6 +42,7 @@ public class MostUsageListAdapter extends RecyclerView.Adapter<MostUsageListAdap
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         private final TextView mPackageName;
+
         private final ImageView mAppIcon;
         private final TextView mPercentage;
         private final ProgressBar pb ;
@@ -87,17 +89,37 @@ public class MostUsageListAdapter extends RecyclerView.Adapter<MostUsageListAdap
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
         double j;
-
+        Log.d("tag", "position=" + String.valueOf(position));
         final PackageManager pm= context.getPackageManager();
+        String name=null;
         ApplicationInfo ai=null;
-        try {
-            ai=pm.getApplicationInfo(mCustomUsageStatsList.get(position).usageStats.getPackageName(), 0);
 
-        }catch (final PackageManager.NameNotFoundException e) {
-            ai = null;
+        for (CustomUsageStats member : mCustomUsageStatsList){
+            Log.i("Member name: ", String.valueOf(member));
         }
-        final String applicationName = (String) (ai != null ? pm.getApplicationLabel(ai) : "(sahil)");
-        viewHolder.getPackageName().setText(applicationName);
+
+        try {
+            Log.d("tag","0=" + String.valueOf(mCustomUsageStatsList.get(position).usageStats.getPackageName()));
+            name = String.valueOf(mCustomUsageStatsList.get(position).usageStats.getPackageName());
+            Log.d("tag","name=" + name);
+            AppList applist = new AppList();
+            name = applist.getAppName1(name);
+
+            ai=pm.getApplicationInfo(mCustomUsageStatsList.get(position).usageStats.getPackageName(), 0);
+            name = (String) pm.getApplicationLabel(ai);
+            Log.d("tag", "ai1=" + String.valueOf(ai));
+        }catch (final PackageManager.NameNotFoundException e) {
+            Log.d("tag", "exception=" + String.valueOf(e));
+            ai = null;
+            Log.d("tag", "ai1n=" + String.valueOf(ai));
+        }
+
+        Log.d("tag", "ai2=" + String.valueOf(ai));
+//        final String applicationName = (String) (ai != null ? pm.getApplicationLabel(ai) : name);
+
+        //changed this setText fn from .setText(applicationName) to setText(name);
+        viewHolder.getPackageName().setText(name);
+        final String name1 = name;
 
         final long timeInForeground = mCustomUsageStatsList.get(position).usageStats.getTotalTimeInForeground();
         double percent=timeInForeground*100.0/(double)total;
@@ -121,7 +143,9 @@ public class MostUsageListAdapter extends RecyclerView.Adapter<MostUsageListAdap
                 dialog.setContentView(R.layout.app_dialog);
                 dialog.setTitle("Usage Details");
                 TextView text = (TextView) dialog.findViewById(R.id.appname);
-                text.setText(applicationName);
+
+                //changed this setText(applicationName) to text.setText(name1);
+                text.setText(name1);
                 TextView lastused = (TextView) dialog.findViewById(R.id.last_used);
                 lastused.setText("Last Used : "+dateFormat.format(new Date(mCustomUsageStatsList.get(position).usageStats.getLastTimeUsed())));
                 ImageView image = (ImageView) dialog.findViewById(R.id.image_icon);

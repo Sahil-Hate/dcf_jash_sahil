@@ -336,6 +336,13 @@ public class AppList {
         return map;
     }
 
+    public AppList(){
+        map = new HashMap<>();
+        for(int i=0;i<package_names.length; i++){
+            map.put(package_names[i],app_names[i]);
+        }
+        this.map = map;
+    }
 
     public static String getAppName(HashMap map, String s){
         String appName = null;
@@ -345,6 +352,13 @@ public class AppList {
         return appName;
     }
 
+    public static String getAppName1( String s){
+        String appName = null;
+        if(map.get(s)!=null){
+            appName = map.get(s).toString();
+        }
+        return appName;
+    }
 
 
 }

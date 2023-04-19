@@ -26,7 +26,7 @@ public class Dao_Impl implements Dao {
     this.__insertionAdapterOfDisplayEventEntity = new EntityInsertionAdapter<DisplayEventEntity>(__db) {
       @Override
       public String createQuery() {
-        return "INSERT OR REPLACE INTO `events`(`appName`,`startTime`,`endTime`,`ongoing`,`packageName`) VALUES (?,?,?,?,?)";
+        return "INSERT OR REPLACE INTO `events`(`appName`,`date`,`startTime`,`endTime`,`ongoing`,`packageName`) VALUES (?,?,?,?,?,?)";
       }
 
       @Override
@@ -36,13 +36,18 @@ public class Dao_Impl implements Dao {
         } else {
           stmt.bindString(1, value.appName);
         }
-        stmt.bindLong(2, value.startTime);
-        stmt.bindLong(3, value.endTime);
-        stmt.bindLong(4, value.ongoing);
-        if (value.packageName == null) {
-          stmt.bindNull(5);
+        if (value.date == null) {
+          stmt.bindNull(2);
         } else {
-          stmt.bindString(5, value.packageName);
+          stmt.bindString(2, value.date);
+        }
+        stmt.bindLong(3, value.startTime);
+        stmt.bindLong(4, value.endTime);
+        stmt.bindLong(5, value.ongoing);
+        if (value.packageName == null) {
+          stmt.bindNull(6);
+        } else {
+          stmt.bindString(6, value.packageName);
         }
       }
     };
@@ -97,6 +102,7 @@ public class Dao_Impl implements Dao {
     final Cursor _cursor = __db.query(_statement);
     try {
       final int _cursorIndexOfAppName = _cursor.getColumnIndexOrThrow("appName");
+      final int _cursorIndexOfDate = _cursor.getColumnIndexOrThrow("date");
       final int _cursorIndexOfStartTime = _cursor.getColumnIndexOrThrow("startTime");
       final int _cursorIndexOfEndTime = _cursor.getColumnIndexOrThrow("endTime");
       final int _cursorIndexOfOngoing = _cursor.getColumnIndexOrThrow("ongoing");
@@ -106,6 +112,7 @@ public class Dao_Impl implements Dao {
         final DisplayEventEntity _item;
         _item = new DisplayEventEntity();
         _item.appName = _cursor.getString(_cursorIndexOfAppName);
+        _item.date = _cursor.getString(_cursorIndexOfDate);
         _item.startTime = _cursor.getLong(_cursorIndexOfStartTime);
         _item.endTime = _cursor.getLong(_cursorIndexOfEndTime);
         _item.ongoing = _cursor.getInt(_cursorIndexOfOngoing);
