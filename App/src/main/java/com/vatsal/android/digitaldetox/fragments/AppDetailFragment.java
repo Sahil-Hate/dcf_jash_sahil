@@ -124,6 +124,7 @@ public class AppDetailFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(Objects.requireNonNull(getActivity()).getApplicationContext()));
         mRecyclerView.setItemAnimator(null);
 
+
         mRecyclerView.setAdapter(scrollAdapter.wrap(mTotalAdapter.wrap(mFastAdapter)));
 
         TouchScrollBar materialScrollBar = new TouchScrollBar(getActivity().getApplicationContext(),
