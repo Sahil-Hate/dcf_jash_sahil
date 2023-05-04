@@ -1,7 +1,11 @@
 package com.vatsal.android.digitaldetox.fragments;
 
-
+import android.app.usage.UsageEvents.Event;
+import android.app.usage.UsageEvents;
+import android.app.usage.UsageStats;
+import android.app.usage.UsageStatsManager;
 import android.arch.lifecycle.ViewModelProviders;
+import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -46,6 +50,7 @@ import com.vatsal.android.digitaldetox.utils.AppList;
 import android.util.Log;
 //import com.vatsal.android.digitaldetox.activities.CarbonCalculation;
 
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -62,6 +67,8 @@ public class AppDetailFragment extends Fragment {
 
     private static final String KEY_APP_NAME = "appName";
     private static final String KEY_DATE_OFFSET = "dateOffset";
+
+//    UsageStatsManager usageStatsManager = (UsageStatsManager) getContext().getSystemService(Context.USAGE_STATS_SERVICE);
 
     @BindView(R.id.recyclerview_app_detail)
     RecyclerView mRecyclerView;
@@ -82,6 +89,7 @@ public class AppDetailFragment extends Fragment {
     private int mDateOffset;
     public String carbon_footprint;
     long time_sec;
+    public HashMap<String, Integer> whatsapp_countlist = new HashMap<>();
 
 
     public static AppDetailFragment newInstance(String appName, int dateOffset) {
@@ -124,7 +132,6 @@ public class AppDetailFragment extends Fragment {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(Objects.requireNonNull(getActivity()).getApplicationContext()));
         mRecyclerView.setItemAnimator(null);
 
-
         mRecyclerView.setAdapter(scrollAdapter.wrap(mTotalAdapter.wrap(mFastAdapter)));
 
         TouchScrollBar materialScrollBar = new TouchScrollBar(getActivity().getApplicationContext(),
@@ -134,22 +141,62 @@ public class AppDetailFragment extends Fragment {
         materialScrollBar.addIndicator(new DateAndTimeIndicator(getActivity().
                 getApplicationContext(), false, false, false, true), true);
 
+        UsageStatsManager usageStatsManager = (UsageStatsManager) getContext().getSystemService(Context.USAGE_STATS_SERVICE);
+//        UsageEvents usageEvents = usageStatsManager.queryEvents(
+//                System.currentTimeMillis() - (7 * 24 * 60 * 60 * 1000),
+//                System.currentTimeMillis());
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR, -7);
+        long startTime = calendar.getTimeInMillis();
+        long endTime = System.currentTimeMillis();
+        UsageEvents usageEvents = usageStatsManager.queryEvents(startTime, endTime);
+
+        int count = 0;
+        int mcount=0;
+        Log.d("hi", "check" + usageEvents);
+//        Log.d("hi", "events=" + event);
+        Log.d("hi", "check=" + UsageEvents.Event.MOVE_TO_FOREGROUND);
+        Log.d("cnt", "appname= " + mAppName);
+
+        while (usageEvents.hasNextEvent()) {
+            UsageEvents.Event event = new UsageEvents.Event();
+            usageEvents.getNextEvent(event);
+//            Log.d("cnt", "event= " + event.getPackageName());
+            if (event.getEventType() == Event.MOVE_TO_FOREGROUND
+                    && event.getPackageName().equals(mAppName)) {
+//                Log.d("cnt", "icnt" + count);
+                count++;
+            }
+        }
+        Log.d("cmt", "cnt= " +mAppName +"="+ count);
+        count=count/7;
+        Log.d("cmt", "Number of times the app was launched: " +mAppName +"="+ count);
+        count=0;
         formatCustomUsageEvents = ViewModelProviders
                 .of(this)
                 .get(FormatEventsViewModel.class);
 
-        formatCustomUsageEvents
-                .getAppDetailEventsList()
-                .observe(this, allEvents -> {
+        formatCustomUsageEvents.getAppDetailEventsList().observe(this, allEvents -> {
                     assert allEvents != null;
                     AppFilteredEvents appFilteredEvents = Tools.getSpecificAppEvents(allEvents, mAppName);
+                    Log.d("allevents", "allevents= "+ allEvents.get(0).date);
+                    Log.d("allevents", "allevents= "+ allEvents.get(allEvents.size()-1).date);
+//                    Log.d("detevents","detailedevents="+formatCustomUsageEvents.getAppDetailEventsList().toString());
                     if (appFilteredEvents.appEvents == null || appFilteredEvents.appEvents.size() == 0) {
+                        Log.d("app", "filtered="+ appFilteredEvents.appEvents.size());
                         mTotalAdapter.clear();
                         noUsageTV.setVisibility(View.VISIBLE);
                         noUsageChartTV.setVisibility(View.VISIBLE);
                         mRecyclerView.setVisibility(View.GONE);
                         return;
                     } else {
+                        Log.d("apps","filt="+appFilteredEvents);
+                        Log.d("app","appdets" +formatCustomUsageEvents.getAppDetailEventsList());
+                        Log.d("app", "filtered1="+ appFilteredEvents.appEvents.size());
+                        Log.d("app", "listname"+ appFilteredEvents.appEvents.getClass().getSimpleName());
+
+                        whatsapp_countlist.put(appFilteredEvents.appEvents.get(0).date, appFilteredEvents.appEvents.size());
+                        Log.d("map", "hashmap"+ whatsapp_countlist);
                         noUsageTV.setVisibility(View.GONE);
                         noUsageChartTV.setVisibility(View.GONE);
                         mRecyclerView.setVisibility(View.VISIBLE);
@@ -160,19 +207,61 @@ public class AppDetailFragment extends Fragment {
                     if (mTotalAdapter.getItem(0) != null) {
                         int index = findItemInList(appFilteredEvents.appEvents, mTotalAdapter.getItem(1).getModel());
                         if (index > -1) {
+                            Log.d("index", "index=" + index);
                             mTotalAdapter.removeModel(0);
                         }
                         for (int i = index - 1; i >= 0; i--) {
                             mTotalAdapter.addModel(0, appFilteredEvents.appEvents.get(i));
+                            Log.d("apad", "mTotalAdapter=" + mTotalAdapter);
                         }
                     } else {
+                        Log.d("apad", "mTotalAdapter1=" + mTotalAdapter);
                         mTotalAdapter.clear();
                         mTotalAdapter.addModel(appFilteredEvents.appEvents);
                     }
+//                    Log.d("array","appcount_array="+ appcount);
                 });
 
         triggerEvents();
     }
+
+//    public static long getAppLaunchCountLegacy(Context context, String packageName, long startTime, long endTime) {
+//        UsageStatsManager usageStatsManager = (UsageStatsManager) context.getSystemService(Context.USAGE_STATS_SERVICE);
+//        List<UsageStats> usageStatsList = usageStatsManager.queryUsageStats(UsageStatsManager.INTERVAL_DAILY, startTime, endTime);
+//        long launchCount = 0;
+//        for (UsageStats usageStats : usageStatsList) {
+//            if (usageStats.getPackageName().equals(packageName)) {
+//                try {
+//                    Method method = usageStats.getClass().getMethod("getLaunchCount");
+//                    int count = (int) method.invoke(usageStats);
+//                    Log.d("cnt1", "cnt1" + count);
+//                    launchCount += count;
+//                } catch (Exception e) {
+//                    Log.d("err", "err" + e);
+//                    e.printStackTrace();
+//                }
+//            }
+//        }
+//        return launchCount;
+//    }
+
+//    public int getAppLaunchCount(String packageName) {
+//        UsageEvents usageEvents = usageStatsManager.queryEvents(
+//                System.currentTimeMillis() - (7 * 24 * 60 * 60 * 1000),
+//                System.currentTimeMillis());
+//        UsageEvents.Event event = new UsageEvents.Event();
+//        int count = 0;
+//        while (usageEvents.hasNextEvent()) {
+//            usageEvents.getNextEvent(event);
+//            if (event.getEventType() == UsageEvents.Event.MOVE_TO_FOREGROUND
+//                    && event.getPackageName().equals(packageName)) {
+//                count++;
+//            }
+//        }
+//        return count;
+//    }
+
+
 
     @Override
     public void onDestroyView() {
@@ -183,7 +272,7 @@ public class AppDetailFragment extends Fragment {
     private int findItemInList(List<DisplayEventEntity> list, DisplayEventEntity event) {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).appName.equals(event.appName) && list.get(i).startTime == event.startTime)
-
+                Log.i("name", "xyz=" + i);
                 return i;
         }
         return -1;
