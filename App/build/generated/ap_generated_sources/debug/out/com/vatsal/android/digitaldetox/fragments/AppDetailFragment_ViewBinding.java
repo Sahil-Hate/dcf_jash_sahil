@@ -27,6 +27,8 @@ public class AppDetailFragment_ViewBinding implements Unbinder {
     target.noUsageChartTV = Utils.findRequiredViewAsType(source, R.id.detail_chart_no_usage, "field 'noUsageChartTV'", TextView.class);
     target.appBarLayout = Utils.findRequiredViewAsType(source, R.id.appbar, "field 'appBarLayout'", AppBarLayout.class);
     target.carbon_fprint = Utils.findRequiredViewAsType(source, R.id.textView4, "field 'carbon_fprint'", TextView.class);
+    target.app_count = Utils.findRequiredViewAsType(source, R.id.textView5, "field 'app_count'", TextView.class);
+    target.result = Utils.findRequiredViewAsType(source, R.id.result, "field 'result'", TextView.class);
   }
 
   @Override
@@ -42,5 +44,7 @@ public class AppDetailFragment_ViewBinding implements Unbinder {
     target.noUsageChartTV = null;
     target.appBarLayout = null;
     target.carbon_fprint = null;
+    target.app_count = null;
+    target.result = null;
   }
 }

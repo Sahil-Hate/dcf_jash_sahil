@@ -24,8 +24,15 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -48,13 +55,18 @@ import com.vatsal.android.digitaldetox.utils.FormatEventsViewModel;
 import com.vatsal.android.digitaldetox.utils.Tools;
 import com.vatsal.android.digitaldetox.utils.AppList;
 import android.util.Log;
+import android.widget.Toast;
 //import com.vatsal.android.digitaldetox.activities.CarbonCalculation;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
 import java.util.TimeZone;
 
@@ -67,6 +79,8 @@ public class AppDetailFragment extends Fragment {
 
     private static final String KEY_APP_NAME = "appName";
     private static final String KEY_DATE_OFFSET = "dateOffset";
+    int count = 0;
+    int wicount=0;
 
 //    UsageStatsManager usageStatsManager = (UsageStatsManager) getContext().getSystemService(Context.USAGE_STATS_SERVICE);
 
@@ -82,15 +96,21 @@ public class AppDetailFragment extends Fragment {
     AppBarLayout appBarLayout;
     @BindView(R.id.textView4)
     TextView carbon_fprint;
+    @BindView(R.id.textView5)
+    TextView app_count;
+    //    @BindView(R.id.predict)
+//    Button predict;
+    @BindView(R.id.result)
+    TextView result;
 
+    Button predict;
     private Unbinder mUnbinder;
     private FormatEventsViewModel formatCustomUsageEvents;
     private String mAppName;
     private int mDateOffset;
     public String carbon_footprint;
     long time_sec;
-    public HashMap<String, Integer> whatsapp_countlist = new HashMap<>();
-
+    String url = "https://sahilhate01.pythonanywhere.com/predict";
 
     public static AppDetailFragment newInstance(String appName, int dateOffset) {
         Bundle bundle = new Bundle();
@@ -109,6 +129,7 @@ public class AppDetailFragment extends Fragment {
             mAppName = bundle.getString(KEY_APP_NAME);
             mDateOffset = bundle.getInt(KEY_DATE_OFFSET);
         }
+
     }
 
     @Override
@@ -116,13 +137,104 @@ public class AppDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_app_detail, container, false);
         mUnbinder = ButterKnife.bind(this, v);
+
+        predict = v.findViewById(R.id.predict);
+        result = v.findViewById(R.id.result);
+        Log.d("d","d=" + app_count.getText().toString());
+        predict.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // hit the API -> Volley
+                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+                        new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+
+                                try {
+                                    JSONObject jsonObject = new JSONObject(response);
+                                    String data = jsonObject.getString("result");
+                                    result.setText(data);
+                                    Log.d("resultss", "resultss="+ data);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+
+                            }
+                        },
+                        new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        }){
+
+                    @Override
+                    protected Map<String,String> getParams(){
+                        Map<String,String> params = new HashMap<String,String>();
+                        String s1=Integer.toString(count);
+                        String s2=Integer.toString(wicount);
+                        params.put("appname", mAppName);
+                        if(mAppName.equals("com.whatsapp") || mAppName.equals("com.instagram.android") ){
+                            params.put("appcount",s2);
+                        }else{
+                            params.put("appcount",s1);
+                        }
+
+
+                        return params;
+                    }
+
+                };
+                RequestQueue queue = Volley.newRequestQueue(getContext());
+                queue.add(stringRequest);
+            }
+        });
+
         return v;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+//        predict = getActivity().findViewById(R.id.predict);
+//        predict.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
+//                        new Response.Listener<String>() {
+//                            @Override
+//                            public void onResponse(String response) {
+//                                Log.d("resultss", "resultss="+ response);
+//                                try {
+//                                    JSONObject jsonObject = new JSONObject(response);
+//                                    String data = jsonObject.getString("result");
+//                                    result.setText(data);
+//                                    Log.d("resultss", "resultss="+ data);
+//                                } catch (JSONException e) {
+//                                    e.printStackTrace();
+//                                }
+//                            }
+//                        },
+//                        new Response.ErrorListener() {
+//                            @Override
+//                            public void onErrorResponse(VolleyError error) {
+////                                Toast.makeText(AppDetailFragment.this, error.getMessage(), Toast.LENGTH_SHORT).show();
+//                            }
+//                        }){
+//                    @Override
+//                    protected Map<String, String> getParams(){
+//                        Map<String, String> params = new HashMap<String, String>();
+//                        params.put("appname", mAppName);
+//                        params.put("appcount",app_count.getText().toString());
+//
+//                        return params;
+//                    }
+//                };
+//
+//                RequestQueue queue = Volley.newRequestQueue(getContext());
+//                queue.add(stringRequest);
+//            }
+//        });
         mRecyclerView.scrollToPosition(0);
 
         FastAdapter<TotalItem> mFastAdapter = new FastAdapter<>();
@@ -147,80 +259,91 @@ public class AppDetailFragment extends Fragment {
 //                System.currentTimeMillis());
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR, -7);
-        long startTime = calendar.getTimeInMillis();
+//        long startTime = calendar.getTimeInMillis();
+        long startTime = System.currentTimeMillis() - (7 * 24 * 60 * 60 * 1000);
         long endTime = System.currentTimeMillis();
         UsageEvents usageEvents = usageStatsManager.queryEvents(startTime, endTime);
 
-        int count = 0;
-        int mcount=0;
-        Log.d("hi", "check" + usageEvents);
-//        Log.d("hi", "events=" + event);
-        Log.d("hi", "check=" + UsageEvents.Event.MOVE_TO_FOREGROUND);
         Log.d("cnt", "appname= " + mAppName);
 
         while (usageEvents.hasNextEvent()) {
-            UsageEvents.Event event = new UsageEvents.Event();
+            Event event = new Event();
             usageEvents.getNextEvent(event);
-//            Log.d("cnt", "event= " + event.getPackageName());
-            if (event.getEventType() == Event.MOVE_TO_FOREGROUND
-                    && event.getPackageName().equals(mAppName)) {
-//                Log.d("cnt", "icnt" + count);
-                count++;
+            if(mAppName.equals("com.whatsapp") || mAppName.equals("com.instagram.android") ){
+                if (event.getEventType() == Event.ACTIVITY_STOPPED
+                        && event.getPackageName().equals(mAppName)) {
+                    wicount++;
+                }
+//                count=count/2;
             }
+            else{
+                if (event.getEventType() == Event.ACTIVITY_RESUMED
+                        && event.getPackageName().equals(mAppName)) {
+//                Log.d("cnt", "icnt" + count);
+                    count++;
+                }
+            }
+
         }
-        Log.d("cmt", "cnt= " +mAppName +"="+ count);
+        Log.d("cmt", "cnt= " +mAppName +"="+ wicount);
+        wicount=wicount/14;
         count=count/7;
+        Log.d("cmt", "Number of times the app was launched: " +mAppName +"="+ wicount);
+
         Log.d("cmt", "Number of times the app was launched: " +mAppName +"="+ count);
+        TextView myTextView = app_count.findViewById(R.id.textView5);
+        if(mAppName.equals("com.whatsapp") || mAppName.equals("com.instagram.android")){
+            myTextView.setText("Average App Count= " + wicount);
+        }
+        else{
+            myTextView.setText("Average App Count= " + count);
+        }
+
         count=0;
+
+
         formatCustomUsageEvents = ViewModelProviders
                 .of(this)
                 .get(FormatEventsViewModel.class);
 
         formatCustomUsageEvents.getAppDetailEventsList().observe(this, allEvents -> {
-                    assert allEvents != null;
-                    AppFilteredEvents appFilteredEvents = Tools.getSpecificAppEvents(allEvents, mAppName);
-                    Log.d("allevents", "allevents= "+ allEvents.get(0).date);
-                    Log.d("allevents", "allevents= "+ allEvents.get(allEvents.size()-1).date);
+            assert allEvents != null;
+            AppFilteredEvents appFilteredEvents = Tools.getSpecificAppEvents(allEvents, mAppName);
+            Log.d("allevents", "allevents= "+ allEvents.get(0).date);
+            Log.d("allevents", "allevents= "+ allEvents.get(allEvents.size()-1).date);
 //                    Log.d("detevents","detailedevents="+formatCustomUsageEvents.getAppDetailEventsList().toString());
-                    if (appFilteredEvents.appEvents == null || appFilteredEvents.appEvents.size() == 0) {
-                        Log.d("app", "filtered="+ appFilteredEvents.appEvents.size());
-                        mTotalAdapter.clear();
-                        noUsageTV.setVisibility(View.VISIBLE);
-                        noUsageChartTV.setVisibility(View.VISIBLE);
-                        mRecyclerView.setVisibility(View.GONE);
-                        return;
-                    } else {
-                        Log.d("apps","filt="+appFilteredEvents);
-                        Log.d("app","appdets" +formatCustomUsageEvents.getAppDetailEventsList());
-                        Log.d("app", "filtered1="+ appFilteredEvents.appEvents.size());
-                        Log.d("app", "listname"+ appFilteredEvents.appEvents.getClass().getSimpleName());
+            if (appFilteredEvents.appEvents == null || appFilteredEvents.appEvents.size() == 0) {
+                mTotalAdapter.clear();
+                noUsageTV.setVisibility(View.VISIBLE);
+                noUsageChartTV.setVisibility(View.VISIBLE);
+                mRecyclerView.setVisibility(View.GONE);
+                return;
+            } else {
+                Log.d("app", "filtered1="+ appFilteredEvents.appEvents.size());
+                Log.d("app", "listname"+ appFilteredEvents.appEvents.getClass().getSimpleName());
 
-                        whatsapp_countlist.put(appFilteredEvents.appEvents.get(0).date, appFilteredEvents.appEvents.size());
-                        Log.d("map", "hashmap"+ whatsapp_countlist);
-                        noUsageTV.setVisibility(View.GONE);
-                        noUsageChartTV.setVisibility(View.GONE);
-                        mRecyclerView.setVisibility(View.VISIBLE);
-                    }
 
-                    setPie(appFilteredEvents);
+                noUsageTV.setVisibility(View.GONE);
+                noUsageChartTV.setVisibility(View.GONE);
+                mRecyclerView.setVisibility(View.VISIBLE);
+            }
 
-                    if (mTotalAdapter.getItem(0) != null) {
-                        int index = findItemInList(appFilteredEvents.appEvents, mTotalAdapter.getItem(1).getModel());
-                        if (index > -1) {
-                            Log.d("index", "index=" + index);
-                            mTotalAdapter.removeModel(0);
-                        }
-                        for (int i = index - 1; i >= 0; i--) {
-                            mTotalAdapter.addModel(0, appFilteredEvents.appEvents.get(i));
-                            Log.d("apad", "mTotalAdapter=" + mTotalAdapter);
-                        }
-                    } else {
-                        Log.d("apad", "mTotalAdapter1=" + mTotalAdapter);
-                        mTotalAdapter.clear();
-                        mTotalAdapter.addModel(appFilteredEvents.appEvents);
-                    }
-//                    Log.d("array","appcount_array="+ appcount);
-                });
+            setPie(appFilteredEvents);
+
+            if (mTotalAdapter.getItem(0) != null) {
+                int index = findItemInList(appFilteredEvents.appEvents, mTotalAdapter.getItem(1).getModel());
+                if (index > -1) {
+                    mTotalAdapter.removeModel(0);
+                }
+                for (int i = index - 1; i >= 0; i--) {
+                    mTotalAdapter.addModel(0, appFilteredEvents.appEvents.get(i));
+                }
+            } else {
+                mTotalAdapter.clear();
+                mTotalAdapter.addModel(appFilteredEvents.appEvents);
+            }
+
+        });
 
         triggerEvents();
     }
@@ -273,7 +396,7 @@ public class AppDetailFragment extends Fragment {
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).appName.equals(event.appName) && list.get(i).startTime == event.startTime)
                 Log.i("name", "xyz=" + i);
-                return i;
+            return i;
         }
         return -1;
     }
@@ -400,7 +523,7 @@ public class AppDetailFragment extends Fragment {
         }
         else {
             TextView myTextView = carbon_fprint.findViewById(R.id.textView4);
-            myTextView.setText("Carbon Footprint: " + carbon_footprint + " gm");
+            myTextView.setText("Today's Carbon Footprint: " + carbon_footprint + " gm");
 
             ArrayList<PieEntry> entries = new ArrayList<>();
 

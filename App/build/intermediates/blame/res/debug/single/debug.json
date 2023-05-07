@@ -20,6 +20,10 @@
         "source": "C:\\Users\\Sahil\\Downloads\\DigitalDetox-master (2)\\DigitalDetox-master\\App\\src\\main\\res\\layout-sw320dp\\most_usage_row.xml"
     },
     {
+        "merged": "C:\\Users\\Sahil\\Downloads\\DigitalDetox-master (2)\\DigitalDetox-master\\App\\build\\intermediates\\res\\merged\\debug\\xml_network_security_config.xml.flat",
+        "source": "C:\\Users\\Sahil\\Downloads\\DigitalDetox-master (2)\\DigitalDetox-master\\App\\src\\main\\res\\xml\\network_security_config.xml"
+    },
+    {
         "merged": "C:\\Users\\Sahil\\Downloads\\DigitalDetox-master (2)\\DigitalDetox-master\\App\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\Sahil\\Downloads\\DigitalDetox-master (2)\\DigitalDetox-master\\App\\src\\main\\res\\drawable-xxhdpi\\ic_launcher.png"
     },

@@ -16,113 +16,119 @@
 12    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 12-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:11:5-81
 12-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:11:22-78
-13
-14    <application
-14-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:13:5-59:19
-15        android:name="com.vatsal.android.digitaldetox.utils.MyApplication"
-15-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:14:9-44
-16        android:allowBackup="true"
-16-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:15:9-35
-17        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
-17-->[com.android.support:support-compat:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\00567bd0de14b33d1bf8a440dc72bff8\support-compat-28.0.0\AndroidManifest.xml:22:18-91
-18        android:debuggable="true"
-19        android:icon="@drawable/ic_launcher"
-19-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:17:9-45
-20        android:label="@string/app_name"
-20-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:16:9-41
-21        android:testOnly="true"
-22        android:theme="@style/Theme.AppCompat.Light" >
-22-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:18:9-53
-23        <activity
-23-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:21:9-28:20
-24            android:name="com.vatsal.android.digitaldetox.activities.AppUsageStatisticsActivity"
-24-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:21:19-72
-25            android:label="@string/app_name"
-25-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:22:19-51
-26            android:theme="@style/AppTheme" >
-26-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:23:13-44
-27            <intent-filter>
-27-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:24:13-27:29
-28                <action android:name="android.intent.action.MAIN" />
-28-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:25:17-69
-28-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:25:25-66
-29
-30                <category android:name="android.intent.category.LAUNCHER" />
-30-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:26:17-77
-30-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:26:27-74
-31            </intent-filter>
-32        </activity>
-33        <activity
-33-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:30:9-31:58
-34            android:name="com.vatsal.android.digitaldetox.activities.NotificationActivity"
-34-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:30:19-66
-35            android:theme="@style/AppTheme.NoActionBar" />
-35-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:31:13-56
-36        <activity
-36-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:32:9-34:38
-37            android:name="com.vatsal.android.digitaldetox.activities.OptionsActivity"
-37-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:32:19-61
-38            android:label="options"
-38-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:34:13-36
-39            android:theme="@style/AppTheme.NoActionBar" />
-39-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:33:13-56
-40
-41        <receiver
-41-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:36:9-46:20
-42            android:name="com.vatsal.android.digitaldetox.receiver.MonitorBootReceiver"
-42-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:40:13-57
-43            android:enabled="true"
-43-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:37:13-35
-44            android:exported="true"
-44-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:38:13-36
-45            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
-45-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:39:13-75
-46            <intent-filter>
-46-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:41:13-45:29
-47                <action android:name="android.intent.action.BOOT_COMPLETED" />
-47-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:17-79
-47-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:25-76
-48                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
-48-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:43:17-82
-48-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:43:25-79
-49
-50                <category android:name="android.intent.category.DEFAULT" />
-50-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:44:17-76
-50-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:44:27-73
-51            </intent-filter>
-52        </receiver>
-53
-54        <service android:name="com.vatsal.android.digitaldetox.services.Monitor" />
-54-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:48:9-53
-54-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:48:18-50
-55        <service android:name="com.vatsal.android.digitaldetox.services.NotificationService" />
-55-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:49:9-65
-55-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:49:18-62
-56        <service android:name="com.vatsal.android.digitaldetox.services.PopulateDatabaseService" />
-56-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:9-69
-56-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:18-66
-57
-58        <receiver android:name="com.vatsal.android.digitaldetox.receiver.BootCompletedReceiver" >
-58-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:53:9-57:20
-58-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:53:19-65
-59            <intent-filter>
-59-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:54:13-56:29
-60                <action android:name="android.intent.action.BOOT_COMPLETED" />
-60-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:17-79
-60-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:25-76
-61            </intent-filter>
-62        </receiver>
-63
-64        <provider
-64-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:23:9-27:43
-65            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
-65-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:24:13-83
-66            android:authorities="com.vatsal.android.digitaldetox.lifecycle-trojan"
-66-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:25:13-68
-67            android:exported="false"
-67-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:26:13-37
-68            android:multiprocess="true" />
-68-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:27:13-40
-69    </application>
-70
-71</manifest>
+13    <uses-permission android:name="android.permission.INTERNET" />
+13-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:12:5-67
+13-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:12:22-64
+14
+15    <application
+15-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:14:5-62:19
+16        android:name="com.vatsal.android.digitaldetox.utils.MyApplication"
+16-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:15:9-44
+17        android:allowBackup="true"
+17-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:16:9-35
+18        android:appComponentFactory="android.support.v4.app.CoreComponentFactory"
+18-->[com.android.support:support-compat:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\00567bd0de14b33d1bf8a440dc72bff8\support-compat-28.0.0\AndroidManifest.xml:22:18-91
+19        android:debuggable="true"
+20        android:icon="@drawable/ic_launcher"
+20-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:18:9-45
+21        android:label="@string/app_name"
+21-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:17:9-41
+22        android:networkSecurityConfig="@xml/network_security_config"
+22-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:21:9-69
+23        android:theme="@style/Theme.AppCompat.Light"
+23-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:19:9-53
+24        android:usesCleartextTraffic="true" >
+24-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:20:9-44
+25        <activity
+25-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:24:9-31:20
+26            android:name="com.vatsal.android.digitaldetox.activities.AppUsageStatisticsActivity"
+26-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:24:19-72
+27            android:label="@string/app_name"
+27-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:25:13-45
+28            android:theme="@style/AppTheme" >
+28-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:26:13-44
+29            <intent-filter>
+29-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:27:13-30:29
+30                <action android:name="android.intent.action.MAIN" />
+30-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:28:17-69
+30-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:28:25-66
+31
+32                <category android:name="android.intent.category.LAUNCHER" />
+32-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:29:17-77
+32-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:29:27-74
+33            </intent-filter>
+34        </activity>
+35        <activity
+35-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:33:9-34:58
+36            android:name="com.vatsal.android.digitaldetox.activities.NotificationActivity"
+36-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:33:19-66
+37            android:theme="@style/AppTheme.NoActionBar" />
+37-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:34:13-56
+38        <activity
+38-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:35:9-37:38
+39            android:name="com.vatsal.android.digitaldetox.activities.OptionsActivity"
+39-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:35:19-61
+40            android:label="options"
+40-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:37:13-36
+41            android:theme="@style/AppTheme.NoActionBar" />
+41-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:36:13-56
+42
+43        <receiver
+43-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:39:9-49:20
+44            android:name="com.vatsal.android.digitaldetox.receiver.MonitorBootReceiver"
+44-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:43:13-57
+45            android:enabled="true"
+45-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:40:13-35
+46            android:exported="true"
+46-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:41:13-36
+47            android:permission="android.permission.RECEIVE_BOOT_COMPLETED" >
+47-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:13-75
+48            <intent-filter>
+48-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:44:13-48:29
+49                <action android:name="android.intent.action.BOOT_COMPLETED" />
+49-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:45:17-79
+49-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:45:25-76
+50                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+50-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:46:17-82
+50-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:46:25-79
+51
+52                <category android:name="android.intent.category.DEFAULT" />
+52-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:47:17-76
+52-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:47:27-73
+53            </intent-filter>
+54        </receiver>
+55
+56        <service android:name="com.vatsal.android.digitaldetox.services.Monitor" />
+56-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:9-53
+56-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:18-50
+57        <service android:name="com.vatsal.android.digitaldetox.services.NotificationService" />
+57-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:52:9-65
+57-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:52:18-62
+58        <service android:name="com.vatsal.android.digitaldetox.services.PopulateDatabaseService" />
+58-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:54:9-69
+58-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:54:18-66
+59
+60        <receiver android:name="com.vatsal.android.digitaldetox.receiver.BootCompletedReceiver" >
+60-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:56:9-60:20
+60-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:56:19-65
+61            <intent-filter>
+61-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:57:13-59:29
+62                <action android:name="android.intent.action.BOOT_COMPLETED" />
+62-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:45:17-79
+62-->C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:45:25-76
+63            </intent-filter>
+64        </receiver>
+65
+66        <provider
+66-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:23:9-27:43
+67            android:name="android.arch.lifecycle.ProcessLifecycleOwnerInitializer"
+67-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:24:13-83
+68            android:authorities="com.vatsal.android.digitaldetox.lifecycle-trojan"
+68-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:25:13-68
+69            android:exported="false"
+69-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:26:13-37
+70            android:multiprocess="true" />
+70-->[android.arch.lifecycle:extensions:1.1.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e82df37e644869abde55b8ff81ffeca4\extensions-1.1.1\AndroidManifest.xml:27:13-40
+71    </application>
+72
+73</manifest>

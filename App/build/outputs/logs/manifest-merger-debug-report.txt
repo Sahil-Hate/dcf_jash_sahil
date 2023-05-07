@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
-INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
-INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
-INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
+INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
+INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
+INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
 MERGED from [com.android.support:support-v13:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\8b7fa1660dcc1e56506acf068157d682\support-v13-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e880da2ae6f5afb5116d24ba5623fef1\support-v4-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.turingtechnologies.materialscrollbar:lib:10.0.1] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\e13d59324c8a93498a88324a5be806b2\lib-10.0.1\AndroidManifest.xml:2:1-11:12
@@ -50,9 +50,9 @@ MERGED from [com.android.support:documentfile:28.0.0] C:\Users\Sahil\.gradle\cac
 MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\8dbf37106270662bcf8910d884c3388d\localbroadcastmanager-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:print:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\f9b4407e2d6f9e6d73e2e41e2d02eb35\print-28.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:interpolator:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\d7fd0a6b82dbac033f938c982be39bd3\interpolator-28.0.0\AndroidManifest.xml:17:1-22:12
-INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
-INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
-INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-60:12
+INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
+INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
+INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:3:1-63:12
 	package
 		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:5:5-46
 		INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml
@@ -79,8 +79,12 @@ uses-permission#android.permission.RECEIVE_BOOT_COMPLETED
 ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:11:5-81
 	android:name
 		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:12:5-67
+	android:name
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:12:22-64
 application
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:13:5-59:19
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:14:5-62:19
 MERGED from [com.android.support:design:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\0e8846c1e204e79a65a49499cf5cacc7\design-28.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\0e8846c1e204e79a65a49499cf5cacc7\design-28.0.0\AndroidManifest.xml:22:5-20
 MERGED from [com.afollestad.material-dialogs:core:0.9.6.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\bb41fa97bf69c441a4d6330754dcaf1f\core-0.9.6.0\AndroidManifest.xml:13:5-20
@@ -98,91 +102,95 @@ MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\Sahil\.gra
 	android:appComponentFactory
 		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\Sahil\.gradle\caches\transforms-2\files-2.1\00567bd0de14b33d1bf8a440dc72bff8\support-compat-28.0.0\AndroidManifest.xml:22:18-91
 	android:label
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:16:9-41
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:17:9-41
 	tools:ignore
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:19:9-60
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:22:9-60
 	android:icon
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:17:9-45
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:18:9-45
 	android:allowBackup
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:15:9-35
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:16:9-35
 	android:theme
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:18:9-53
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:19:9-53
+	android:networkSecurityConfig
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:21:9-69
+	android:usesCleartextTraffic
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:20:9-44
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:14:9-44
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:15:9-44
 activity#com.vatsal.android.digitaldetox.activities.AppUsageStatisticsActivity
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:21:9-28:20
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:24:9-31:20
 	android:label
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:22:19-51
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:25:13-45
 	android:theme
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:23:13-44
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:26:13-44
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:21:19-72
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:24:19-72
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:24:13-27:29
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:27:13-30:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:25:17-69
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:28:17-69
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:25:25-66
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:28:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:26:17-77
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:29:17-77
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:26:27-74
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:29:27-74
 activity#com.vatsal.android.digitaldetox.activities.NotificationActivity
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:30:9-31:58
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:33:9-34:58
 	android:theme
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:31:13-56
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:34:13-56
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:30:19-66
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:33:19-66
 activity#com.vatsal.android.digitaldetox.activities.OptionsActivity
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:32:9-34:38
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:35:9-37:38
 	android:label
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:34:13-36
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:37:13-36
 	android:theme
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:33:13-56
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:36:13-56
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:32:19-61
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:35:19-61
 receiver#com.vatsal.android.digitaldetox.receiver.MonitorBootReceiver
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:36:9-46:20
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:39:9-49:20
 	android:enabled
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:37:13-35
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:40:13-35
 	android:exported
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:38:13-36
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:41:13-36
 	android:permission
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:39:13-75
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:13-75
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:40:13-57
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:43:13-57
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+action:name:android.intent.action.QUICKBOOT_POWERON+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:41:13-45:29
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:44:13-48:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:17-79
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:45:17-79
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:42:25-76
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:45:25-76
 action#android.intent.action.QUICKBOOT_POWERON
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:43:17-82
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:46:17-82
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:43:25-79
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:46:25-79
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:44:17-76
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:47:17-76
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:44:27-73
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:47:27-73
 service#com.vatsal.android.digitaldetox.services.Monitor
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:48:9-53
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:9-53
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:48:18-50
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:18-50
 service#com.vatsal.android.digitaldetox.services.NotificationService
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:49:9-65
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:52:9-65
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:49:18-62
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:52:18-62
 service#com.vatsal.android.digitaldetox.services.PopulateDatabaseService
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:9-69
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:54:9-69
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:51:18-66
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:54:18-66
 receiver#com.vatsal.android.digitaldetox.receiver.BootCompletedReceiver
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:53:9-57:20
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:56:9-60:20
 	android:name
-		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:53:19-65
+		ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:56:19-65
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:54:13-56:29
+ADDED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml:57:13-59:29
 uses-sdk
 INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Sahil\Downloads\DigitalDetox-master (2)\DigitalDetox-master\App\src\main\AndroidManifest.xml

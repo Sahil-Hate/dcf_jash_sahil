@@ -1436,12 +1436,14 @@ id pb
 id percent
 id percentage
 id pin
+id predict
 id progress_circular
 id progress_horizontal
 id radio
 id recyclerview_app_detail
 id recyclerview_app_usage
 id reservedNamedId
+id result
 id right
 id right_icon
 id right_side
@@ -1502,6 +1504,7 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView4
+id textView5
 id text_input_password_toggle
 id textinput_counter
 id textinput_error
@@ -2336,3 +2339,4 @@ styleable TouchScrollBar msb_autoHide msb_hideDelayInMilliseconds
 styleable View android_theme android_focusable paddingEnd paddingStart theme
 styleable ViewBackgroundHelper android_background backgroundTint backgroundTintMode
 styleable ViewStubCompat android_id android_layout android_inflatedId
+xml network_security_config
